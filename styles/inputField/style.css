@@ -1,0 +1,203 @@
+/* ===== 输入框容器 ===== */
+.input-container {
+  width: 100%;
+  /* max-width: 500px; */
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  border: 1px solid #e8d5b5; /* 宣纸边框色 */
+}
+
+/* ===== 返回按钮 ===== */
+.input-container .text-gray-500 {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #9f2b2b; /* 中医红 */
+  transition: all 0.3s ease;
+}
+
+.input-container .text-gray-500:hover {
+  color: #7a1f1f;
+  transform: translateX(-3px);
+}
+
+/* ===== 标签样式 ===== */
+.input-container label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  color: #5c2b1a; /* 深棕红 */
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* ===== 输入框主体 ===== */
+.input-container .input-field {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #d1c0a8; /* 浅宣纸色 */
+  border-radius: 8px;
+  background-color: rgba(248, 243, 230, 0.5); /* 半透明白色 */
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+.input-container .input-field:focus {
+  outline: none;
+  border-color: #9f2b2b;
+  box-shadow: 0 0 0 3px rgba(159, 43, 43, 0.2);
+  background-color: white;
+}
+
+/* ===== 结果预览文本 ===== */
+.input-container .text-gray-600 {
+  padding: 1rem;
+  background-color: rgba(248, 243, 230, 0.7); /* 宣纸背景 */
+  border-radius: 8px;
+  color: #5c2b1a;
+  text-align: center;
+  border-left: 4px solid #9f2b2b;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ===== 操作按钮 ===== */
+/* ===== 后退按钮 (小型化) ===== */
+.input-container .back-button {
+  top: 0.5rem;
+  left: 1.2rem;
+  width: auto; /* 取消固定宽度 */
+  position: absolute;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #9f2b2b;
+  transition: all 0.3s ease;
+  border-radius: 50%; /* 圆形按钮 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-container .back-button:hover {
+  color: #7a1f1f;
+  background-color: rgba(159, 43, 43, 0.1); /* 悬浮轻量背景 */
+  transform: translateX(-3px) scale(1.05);
+}
+
+/* ===== 下一步/计算按钮 (保持醒目) ===== */
+.input-container .action-button {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #9f2b2b;
+  color: white;
+}
+
+.input-container .action-button:hover {
+  background-color: #8a2525;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(159, 43, 43, 0.3);
+}
+
+.input-container .action-button:disabled {
+  background-color: #d1c0a8;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ===== 中医元素装饰 ===== */
+.input-container::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 5%;
+  width: 90%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(159, 43, 43, 0.3),
+    transparent
+  );
+}
+
+/* ===== 响应式设计 ===== */
+@media (max-width: 600px) {
+  .input-container {
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+
+  .input-container .input-field {
+    padding: 0.7rem 0.9rem;
+  }
+
+  .input-container .back-button {
+    padding: 0.7rem;
+  }
+}
+/* 表单容器退出动画 */
+.form-container.exiting {
+  animation: slideOut 0.5s ease forwards;
+}
+
+@keyframes slideOut {
+  to {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+}
+
+/* 后退按钮动画 */
+.back-button.close-action {
+  position: relative;
+}
+
+.back-button.close-action::after {
+  content: "返回首页";
+  position: absolute;
+
+  white-space: nowrap;
+  margin-left: 8px;
+  color: #9f2b2b;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.back-button.close-action:hover::after {
+  opacity: 1;
+}
+
+/* 晃动动画 */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-3px);
+  }
+  75% {
+    transform: translateX(3px);
+  }
+}
+
+.back-button.close-action:hover svg {
+  animation: shake 0.5s ease infinite;
+}

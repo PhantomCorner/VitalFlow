@@ -1,0 +1,46 @@
+/* 基础样式 */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(to bottom, #f8f3e6, #e8d5b5);
+}
+
+.landing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.landing-content {
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #202123;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: #565869;
+  margin-bottom: 2rem;
+}
+
+.start-button {
+  background-color: #10a37f;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.start-button:hover {
+  background-color: #0d8a6d;
+}

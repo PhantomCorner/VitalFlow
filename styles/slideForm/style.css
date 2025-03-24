@@ -1,0 +1,56 @@
+.form-container {
+  width: 50vw;
+  min-width: 300px;
+  color: #e0e0e0;
+  font-size: 20px;
+}
+/* 表单容器退出动画 */
+.form-container .exiting {
+  animation: slideOut 0.5s ease forwards;
+}
+
+@keyframes slideOut {
+  to {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+}
+
+/* 后退按钮动画 */
+.back-button.close-action {
+  position: relative;
+}
+
+.back-button.close-action::after {
+  content: "返回首页";
+  position: absolute;
+  left: 100%;
+  white-space: nowrap;
+  margin-left: 8px;
+  color: #9f2b2b;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.back-button.close-action:hover::after {
+  opacity: 1;
+}
+
+/* 晃动动画 */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-3px);
+  }
+  75% {
+    transform: translateX(3px);
+  }
+}
+
+.back-button.close-action:hover svg {
+  animation: shake 0.5s ease infinite;
+}
