@@ -1,5 +1,6 @@
 "use client";
 import { ArrowLeft } from "lucide-react";
+import TestingComp from "./TestingComp.js";
 import "/styles/inputField/style.css";
 export default function InputField({
   label,
@@ -13,9 +14,10 @@ export default function InputField({
 }) {
   return (
     <div className="input-container">
+      <TestingComp passingContent={"omglulHahaha"} />
       <button onClick={onPrev} className={"back-button"}>
         <ArrowLeft size={18} />
-        {!isFirstStep && <span>上一步</span>}
+        {/* {!isFirstStep && <span>上一步</span>} */}
       </button>
 
       <div>

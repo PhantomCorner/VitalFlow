@@ -1,7 +1,7 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import InputField from "./inputField";
+import InputField from "./InputField.js";
 import "/styles/slideForm/style.css";
 const formSteps = [
   { key: "age", label: "你的年龄", type: "number" },

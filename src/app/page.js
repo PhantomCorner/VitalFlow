@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import "/styles/landingPage/style.css";
-import SlideForm from "/components/SlideForm";
+import SlideForm from "../../components/SlideForm";
 export default function LandingPage() {
   const [showForm, setShowForm] = useState(false);
 
